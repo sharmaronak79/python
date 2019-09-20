@@ -1,1 +1,2 @@
 hi it is good to learn python
+this is the way to learn python
