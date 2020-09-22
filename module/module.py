@@ -10,3 +10,6 @@ lbs_to_kg()
 s=[10,55,30,70,44]
 from find_max import find_max
 find_max(s)
+import file
+file.school()
+file.college()
