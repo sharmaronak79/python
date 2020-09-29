@@ -1,2 +1,4 @@
 # python
-its a starting of learning of python
+Its python Time
+
+Import Python as AI
