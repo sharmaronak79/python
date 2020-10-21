@@ -1,0 +1,12 @@
+    i=1
+    args1 = ""
+    for ch in args:
+        if i%2==0:
+            args1 = args1 + (ch.upper())
+            i=i+1
+        else:
+            args1 = args1 + (ch.lower())
+            i=i+1
+    return args1       
+upper_lower('fgfdvdzvz')
+'fGfDvDzVz'
