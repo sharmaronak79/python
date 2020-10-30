@@ -1,0 +1,33 @@
+class Account():
+    
+    def __init__(self,owner,balance):
+        self.owner=owner
+        self.balance=balance
+        
+    def deposit(self,amount):
+        self.balance += amount
+        print(f'{amount} is deposited\n now current balance is {self.balance}')
+        
+    def withdraw(self,wamount):
+        if self.balance>= wamount:
+            self.balance-=wamount
+            print(f'widraw accepted\nnow balance is {self.balance} ')
+        
+        else:
+            print(f'you dont have enough balance\n your balance is {self.balance}')
+            
+    
+
+a=Account('Ronak',500)
+
+a.owner
+
+a.balance
+
+a.deposit(200)
+
+a.withdraw(300)
+
+a.withdraw(500)
+
+a.balance
