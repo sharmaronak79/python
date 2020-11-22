@@ -14,9 +14,7 @@ soup.select('.toclevel-1')[0]
 
 for item in soup.select('.toclevel-1'):
     print(item.text)
-############################################
-NOW TRY FOR IMAGE
-############################################
+
 img_res = requests.get('https://en.wikipedia.org/wiki/Deep_Blue_(chess_computer)')
 
 img_sup= bs4.BeautifulSoup(img_res.text,'lxml')
@@ -35,3 +33,16 @@ computer['src']
 
 <img
      src = "//upload.wikimedia.org/wikipedia/commons/thumb/b/be/Deep_Blue.jpg/220px-Deep_Blue.jpg">
+
+
+
+image_link = requests.get('https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Deep_Blue.jpg/220px-Deep_Blue.jpg')
+
+image_link.content
+
+f = open('bluechess_computer.jpg','wb')
+
+f.write(image_link.content)
+
+f.close()
+
