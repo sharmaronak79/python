@@ -1,3 +1,4 @@
+# GET TWO RATING STAR BOOK AND ITS TITLE
 import requests
 import bs4
 
