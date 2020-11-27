@@ -2,14 +2,14 @@ import smtplib
 
 smtp_objeect = smtplib.SMTP("smtp.gmail.com",587)
 
-smtp_objeect.ehlo()
+smtp_objeect.ehlo()  # this is an extended hello command and also ESMTP protocol, this is sendby email server to itself 
 
-smtp_objeect.starttls()
+smtp_objeect.starttls()   # TLS provides encryption and security TLS- transport layer security
 
 import getpass
 
 email = input("enter you E-mail: ")
-password = getpass.getpass("Password : ")
+password = getpass.getpass("Password : ")  # here w ehave to give our generated app password
 smtp_objeect.login(email,password)
 
 from_address = email
