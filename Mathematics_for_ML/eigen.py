@@ -37,9 +37,12 @@ print(A_unit)
 # the magnitude of a unit vector is equal to 1
 np.linalg.norm(A_unit)
 
-2.7 Eigendecomposition
+#Eigendecomposition
 
-The eigendecomposition is one form of matrix decomposition. Decomposing a matrix means that we want to find a product of matrices that is equal to the initial matrix. In the case of eigendecomposition, we decompose the initial matrix into the product of its eigenvectors and eigenvalues. Before all, let’s see the link between matrices and linear transformation. Then, you’ll learn what are eigenvectors and eigenvalues.
+#The eigendecomposition is one form of matrix decomposition.
+#Decomposing a matrix means that we want to find a product of matrices that is equal to the initial matrix. 
+#In the case of eigendecomposition, we decompose the initial matrix into the product of its eigenvectors and eigenvalues.
+#Before all, let’s see the link between matrices and linear transformation. Then, you’ll learn what are eigenvectors and eigenvalues.
 
 # find the eigen values and eigen vector for a simple squaematrix
 
