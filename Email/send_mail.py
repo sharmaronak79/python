@@ -15,7 +15,7 @@ smtp_objeect.login(email,password)
 from_address = email
 to_address = "sharmaronak79@yahoo.com"
 subject = input("Subject : ")
-message = input("Body message : ")
+message = input("Body Message : ")
 msg = "Subject : "+subject + "\n" + message
 
 smtp_objeect.sendmail(from_address,to_address,msg)
