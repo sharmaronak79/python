@@ -8,7 +8,7 @@ smtp_objeect.starttls()   # TLS provides encryption and security TLS- transport 
 
 import getpass  # getpass library is used to keep our password hidden 
 
-email = input("enter you E-mail: ")
+email = input("enter your E-mail: ")
 password = getpass.getpass("Password : ")  # here w ehave to give our generated app password
 smtp_objeect.login(email,password)
 
