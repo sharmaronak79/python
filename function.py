@@ -1,5 +1,5 @@
 def user_greet():
-    print("hope you doing well")
+    print("hope you Doing well")
     print("god luck for game")
 
 name= input("hi, what is your name? : ")
