@@ -19,7 +19,7 @@ name=input("enter your name: ")
 
 if name :
 
-        print(f"you enter {name}")
+        print(f"You enter {name}")
 
 else:
             print("please enter your name, you did not enter any thing")
