@@ -2,7 +2,7 @@
 
 
 # 1. in key word in if statement
-
+ 
 #name = input("enter any string : ")
 #char = input("enter a character that you want to check : ")
 
