@@ -1,3 +1,3 @@
-name= "ronak"
+name= "roNak"
 age = 27
 print(f"hello {name} , your age is {age-1}")
