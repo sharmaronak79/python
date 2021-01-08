@@ -10,7 +10,7 @@ if (age==0 or age<0):
     print("enter valid age or you cannot watch the show")
 
 elif 1<age<=5:
-    print("ticket prices are $5")
+    print("ticket prices  are $5")
 elif 5<age<=20:
     print ("ticket price are $10")
 elif 20<age<=50:
