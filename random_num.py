@@ -5,7 +5,7 @@ import random
 for i in range(3): #range function for i=0,1,2 so, it iterates through that range
     print(random.randint(10,30))  #randit to enerate random number from that range
 
-team=['ronak','jay','ankit','parth','Harsh','hardik']
+team=['Ronak','jay','ankit','parth','Harsh','hardik']
 z=random.choice(team)
 print(f'{z} will drive today')
 print('')
