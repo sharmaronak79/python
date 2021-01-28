@@ -1,5 +1,5 @@
 
-print("welcome to car game ")
+print("welcome to car the game ")
 started = False
 command = ""
 while True:
