@@ -15,7 +15,7 @@ while True:
             print("car is already stopped...")
         else:
             started = False
-            print("car is stopped.")
+            print("car is Stopped.")
 
     elif command == "help":
         print("""
