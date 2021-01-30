@@ -1,4 +1,4 @@
-# we can create a class and add some function  or method to it
+# we  can create a class and add some function  or method to it
 # after creating a class whatever method of function create inside will be shwn after use of classe usinf . operator
 # during defining any function will use selk as argument as it is called it self
 class Detail:  #this is also called template
