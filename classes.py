@@ -3,7 +3,7 @@
 # during defining any function will use selk as argument as it is called it self
 class Detail:  #this is also called template
     def name(self):
-        name=input('enter name : ')
+        name=input('Enter name : ')
         print(f'name is {name}')
 
     def age(self): #here i have used try and exception also to avoid crashing of programme
