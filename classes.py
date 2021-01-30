@@ -8,7 +8,7 @@ class Detail:  #this is also called template
 
     def age(self): #here i have used try and exception also to avoid crashing of programme
         try:
-            age=int(input('enter age : '))
+            age=int(input('Enter age : '))
             print(f'age is {age}')
         except ValueError:
             print ('invalid input')
