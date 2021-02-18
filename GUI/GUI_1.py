@@ -25,7 +25,7 @@ interact (func,x=widgets.IntSlider(min=-100,max=100,step=1,value=0))
 # we can do same thing using brevation
 interact(func,x=(-10,10,1))
 
-# for drop down menu we use list methid also 
+# for drop  down menu we use list methid also 
 interact(func,x=['option1', 'option2', 'option3'])
 
 # for key and value pair we can use dictionary as well
