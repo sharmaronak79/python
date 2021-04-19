@@ -2,7 +2,7 @@ import smtplib
 
 smtp_objeect = smtplib.SMTP("smtp.gmail.com",587)
 
-smtp_objeect.ehlo()  # this is an extended hello command and also ESMTP protocol, this is sendby email server to itself 
+smtp_objeect.ehlo()  #  this is an extended hello command and also ESMTP protocol, this is sendby email server to itself 
 
 smtp_objeect.starttls()   # TLS provides encryption and security TLS- transport layer security
 
