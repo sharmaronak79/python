@@ -6,7 +6,7 @@ smtp_objeect.ehlo()  #  This is an extended hello command and also ESMTP protoco
 
 smtp_objeect.starttls()   # TLS provides encryption and security TLS- transport layer security
 
-import getpass  # getpass library is used to keep our password hidden 
+import getpass   # getpass library is used to keep our password hidden 
 
 email = input("enter your E-mail: ")
 password = getpass.getpass("Password : ")  # here w ehave to give our generated app password
