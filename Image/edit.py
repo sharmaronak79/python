@@ -20,7 +20,7 @@ spn.size
 
 x=220
 y=70
-w=959
+w=950
 h=1280
 
 spn2=spn.crop((x,y,w,h))
