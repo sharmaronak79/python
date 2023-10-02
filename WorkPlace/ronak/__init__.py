@@ -4,7 +4,7 @@ import os
 
 # Datalogging: create a time-stamped file
 dateString = time.strftime("%Y-%m-%d_%H%M")
-filepath = "./" + dateString + ".csv"
+filepath = "C:\Test/" + dateString + ".csv"
 
 
 def name(string):
@@ -29,7 +29,22 @@ def process_value():
 
         i+=1
         sleep(0.5)
-
-
-
     print("work done")
+
+import pywinauto
+from pywinauto import application
+from pywinauto.keyboard import send_keys
+def open_Teraterm():
+    print("Opening Tera Term....")
+    # out = os.getcwd()
+    # print("Current working directory is:", out)
+    # TT = os.chdir("C:/Program Files (x86)/teraterm")
+    # out = os.getcwd()
+    # print("Current working directory is:", out)
+
+    TT= application.Application().start("C:/Program Files (x86)/teraterm/ttermpro.exe")
+  
+
+def open_TicsPro():
+    print("Opening TicsPro....")
+    Tics=application.Application().start("C:\Program Files (x86)\Texas Instruments\TICS Pro\TICS Pro.exe")
