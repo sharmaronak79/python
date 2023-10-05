@@ -4,8 +4,7 @@ from pywinauto.application import Application
 from pywinauto.keyboard import send_keys
 from pywinauto.controls.win32_controls import ComboBoxWrapper
 
-
-   def open_Teraterm():
+def open_Teraterm():
     print("Opening Tera Term....")
 
     #start an application
@@ -24,10 +23,15 @@ from pywinauto.controls.win32_controls import ComboBoxWrapper
 
     #click on OK button
     TT.TeraTermNewconnection.OK.click()
-    
+
     #click on main menu's Setup and then clicked on Serial Port
-    TT.COM3TeraTermVT.MenuItem(u'&Setup->&Serialport').click()
+    TT.COM3TeraTermVT.menu_item(u'&Setup->&Serialport').click()
     #on the Speed dropdown menu it writes baudrate as 115200
     TT.TeraTermSerialportsetupandconnection["Speed:Edit"].type_keys("115200")
     #after the baudrste is set clicked on NewSetting
     TT.TeraTermNewconnection.NewSetting.click()
+    while(1):
+        time.sleep(5)
+        #TT.COM10TeraTermVT.connect()
+        TT.COM10TeraTermVT.menu_item(u'&Edit->&Clearbiffer').click()
+
