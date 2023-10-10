@@ -18,3 +18,10 @@ def canary():
 
     RCV_DATA = canary.recv((RCV_SZ)).decode().rstrip()
     print(RCV_DATA)
+
+def canary2():
+
+    rm = pyvisa.ResourceManager()
+    canary = rm.open_resource('TCPIP0::192.168.0.30::5555::SOCKET')
+    time.sleep(3)
+    canary.write("*IDN?")
