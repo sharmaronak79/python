@@ -33,14 +33,16 @@ def canary2():
 
     # :rfx:temp - This is a command to check temperature of particular RFModule where x is 1 to 12
     # here query return only the first line (till terminator) of buffer so used additional 3 read() to get all U3,U4 and U5 temperature
-    # print(canary.query(":rf3:temp"))
-    # print(canary.read())
-    # print(canary.read())
-    # print(canary.read())
-    # print(canary.read_bytes(85))
-
     print(canary.query(":rf3:temp"))
     i = 3
     while i > 0:
         print(canary.read())
         i -= 1
+
+    # :rfall:temp, Here the cvalue of i will be number of present RF modules * 4, if you want to see 6 modules temperature then i = 6*4 =24
+    canary.write(":rfall:temp")
+    i = 36
+    while i > 0:
+        print(canary.read())
+        i -= 1
+
