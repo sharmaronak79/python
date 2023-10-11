@@ -19,7 +19,28 @@ def canary():
 
 ###############################################################################################
 def canary2():
+
     rm = pyvisa.ResourceManager()
     canary = rm.open_resource('TCPIP0::192.168.0.30::5555::SOCKET')
-    time.sleep(3)
-    canary.write("*IDN?")
+    canary.write_termination = '\n'
+    canary.read_termination = '\n'
+    time.sleep(0.1)
+
+    # Testing of all SCPI Commands
+    # *IDN?
+    data = canary.query('*IDN?')
+    print(data)
+
+    # :rfx:temp - This is a command to check temperature of particular RFModule where x is 1 to 12
+    # here query return only the first line (till terminator) of buffer so used additional 3 read() to get all U3,U4 and U5 temperature
+    # print(canary.query(":rf3:temp"))
+    # print(canary.read())
+    # print(canary.read())
+    # print(canary.read())
+    # print(canary.read_bytes(85))
+
+    print(canary.query(":rf3:temp"))
+    i = 3
+    while i > 0:
+        print(canary.read())
+        i -= 1
