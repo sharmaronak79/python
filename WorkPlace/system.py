@@ -46,3 +46,48 @@ def canary2():
         print(canary.read())
         i -= 1
 
+######################################################################################################
+def canary_pyvisa():
+    rm = pyvisa.ResourceManager()
+    canary = rm.open_resource('TCPIP0::192.168.0.30::5555::SOCKET')
+    canary.write_termination = '\n'
+    canary.read_termination = '\n'
+    time.sleep(0.1)
+
+    # Below code is useful to check the system status  ON/OFF
+    l1 = canary.read()
+    l2 = canary.read()
+    status = l1 + '\n' + l2
+    print(status)
+    if "on" in status:
+        print("System is ON")
+    else:
+        print("System is FF")
+
+    # Testing of all SCPI Commands
+
+    # *IDN?
+    data = canary.query('*IDN?')
+    print(data)
+
+    # :rfx:status
+    canary.write(":rfall:status")
+    rfx_channel_status = canary.read()
+    print(rfx_channel_status)
+    available_modules = int(list(filter(str.isdigit, rfx_channel_status))[0])
+    print('Available_modules : {0}'.format(available_modules))
+
+    # :rfx:temp - This is a command to check temperature of particular RFModule where x is 1 to 12
+    # here query return only the first line (till terminator) of buffer so used additional 3 read() to get all U3,U4 and U5 temperature
+    canary.write(":rf3:temp")
+    i = 4
+    while i > 0:
+        print(canary.read())
+        i -= 1
+
+    # :rfall:temp, Here the value of i will be number of available RF modules * 4, if you want to see 6 modules temperature then i = 6*4 =24
+    canary.write(":rfall:temp")
+    i = 4 * available_modules
+    while i > 0:
+        print(canary.read())
+        i -= 1
