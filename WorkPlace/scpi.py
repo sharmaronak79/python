@@ -1,10 +1,12 @@
-import pyvisa
-import time
 import socket
+import time
+
+import pyvisa
+
+import variables as var
 
 RCV_SZ = 2000
-# Global variable
-AVAILABLE_MODULES = 0
+
 
 def canary_socket():
     print("Hello I am trying to connect to he Canary system...")
@@ -41,7 +43,7 @@ def canary_pyvisa():
     canary.read_termination = '\n'
     time.sleep(0.1)
 
-    global AVAILABLE_MODULES
+
 
     # Below code is useful to check the system status  ON/OFF
     l1 = canary.read()
@@ -63,8 +65,8 @@ def canary_pyvisa():
     canary.write(":rfall:status")
     rfx_channel_status = canary.read()
     print(rfx_channel_status)
-    AVAILABLE_MODULES = int(list(filter(str.isdigit, rfx_channel_status))[0])
-    print('Available_modules : {0}'.format(AVAILABLE_MODULES))
+    var.AVAILABLE_MODULES = int(list(filter(str.isdigit, rfx_channel_status))[0])
+    print('Available_modules : {0}'.format(var.AVAILABLE_MODULES))
 
     # :rfx:temp - This is a command to check temperature of particular RFModule where x is 1 to 12
     # here query return only the first line (till terminator) of buffer so used additional 3 read() to get all U3,U4 and U5 temperature
@@ -76,16 +78,26 @@ def canary_pyvisa():
 
     # :rfall:temp, Here the value of i will be number of available RF modules * 4, if you want to see 6 modules temperature then i = 6*4 =24
     canary.write(":rfall:temp")
-    i = (4 * AVAILABLE_MODULES) + 1
+    i = (4 * var.AVAILABLE_MODULES) + 1
     while i > 0:
         print(canary.read())
         i -= 1
 
-    print(canary.query(":rfall:freq 10123 -44.44"))
-    print(canary.query(":rf2:status"))
+    # print(canary.query(":rfall:freq 10123 -44.44"))
+    # print(canary.query(":rf2:status"))
 
-    print(canary.query(":syst:configuration 1"))
+    # print(canary.query(":syst:configuration 1"))
 
     # print(canary.query(":system:lmktemperature?"))
-    print(canary.write(":syste:temp?"))
-    print(canary.read())
+    # print(canary.write(":syste:temp?"))
+    # print(canary.read())
+    # print(canary.read())
+    # print(canary.read())
+
+    lmk_tmp = canary.query(":system:lmktemperature?")
+    print(lmk_tmp)
+    lmk_tmp = list(lmk_tmp.split(" "))
+    # print(lmk_tmp)
+    var.LMK_TEMP = lmk_tmp[4]
+    print(float(var.LMK_TEMP))
+
