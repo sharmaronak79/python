@@ -21,3 +21,8 @@ class Device:
         print('This is init function')
         print(f'I have {self.a1}')
         print(f'I have {self.a2} also')       
+
+######################### Driver Code ###################
+from practice import Device
+obj = Device("car" , "Jeep")
+obj.work()
