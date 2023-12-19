@@ -22,21 +22,28 @@ def open_Teraterm():
 
     TT.TeraTermNewconnection.Combobox4.click()  # From the above command we got to know that it is ComboBox4 and then we clicked it
     time.sleep(2)
-    TT.TeraTermNewconnection.Combobox4.select(2)
+    TT.TeraTermNewconnection.Combobox4.select(1)
 
     # click on OK button
     TT.TeraTermNewconnection.OK.click()
 
     # click on main menu's Setup and then clicked on Serial Port
-    TT.COM3TeraTermVT.menu_item(u'&Setup->&Serialport').click()
+    TT.TeraTermVT.menu_item(u'&Setup->&Serialport').click()
     # on the Speed dropdown menu it writes baudrate as 115200
     TT.TeraTermSerialportsetupandconnection["Speed:Edit"].type_keys("115200")
     # after the baudrste is set clicked on NewSetting
     TT.TeraTermNewconnection.NewSetting.click()
-    while 1:
-        time.sleep(5)
-        # TT.COM10TeraTermVT.connect()
-        TT.COM10TeraTermVT.menu_item(u'&Edit->&Clearbiffer').click()
+
+    time.sleep(2)
+    # Click on File and send file
+    TT.TeraTermVT.menu_item(u'&File->&Send file').click()
+    # Select Application File path to send to the canary_app.hex
+   
+
+    # while 1:
+    #     time.sleep(5)
+    #     # TT.COM10TeraTermVT.connect()
+    #     TT.COM10TeraTermVT.menu_item(u'&Edit->&Clearbiffer').click()
 
 
 def open_TicsPro():
