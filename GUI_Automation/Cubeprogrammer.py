@@ -17,9 +17,10 @@ def cubeprogrammer():
     ConnectButton.click()
 
     OpenfileButton = main_window.child_window(title="Open file", auto_id="JavaFX109", control_type="Button").wrapper_object()
-    # OpenfileButton.click()
+    OpenfileButton.click_input()
     print('Open file clicked')
 
+    ##Error form here
     Openfile_window = app.window(title_re = 'Open file')
     Openfile_window.print_control_identifiers()
     time.sleep(5)
